@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320">
+  <defs>
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a12" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#090b14" />
+    </linearGradient>
+    <radialGradient id="glowLeft" cx="18%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#070a12" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowRight" cx="85%" cy="70%" r="55%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#070a12" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <linearGradient id="glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.04" />
+    </linearGradient>
+    <pattern id="gridPattern" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#ffffff" stroke-width="0.7" stroke-opacity="0.05" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="320" rx="20" fill="url(#heroBg)" />
+  <rect width="1200" height="320" rx="20" fill="url(#glowLeft)" />
+  <rect width="1200" height="320" rx="20" fill="url(#glowRight)" />
+  <rect width="1200" height="320" rx="20" fill="url(#gridPattern)" />
+  <rect x="1.5" y="1.5" width="1197" height="317" rx="18.5" fill="none" stroke="#38bdf8" stroke-opacity="0.28" stroke-width="2" />
+
+  <!-- Icon Block on Left -->
+  <g transform="translate(64, 72)">
+    <rect x="0" y="0" width="168" height="168" rx="36" fill="#0b1120" stroke="url(#accent)" stroke-width="3.5" />
+    <path d="M 22 128 L 58 84 L 88 112 L 120 68 L 148 128 Z" fill="url(#accent)" opacity="0.85" />
+    <circle cx="54" cy="54" r="11" fill="#38bdf8" />
+    <rect x="34" y="42" width="100" height="88" rx="16" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2" />
+    <circle cx="50" cy="58" r="4" fill="#38bdf8" />
+    <circle cx="64" cy="58" r="4" fill="#818cf8" />
+    <rect x="48" y="76" width="72" height="8" rx="4" fill="#f8fafc" fill-opacity="0.8" />
+    <rect x="48" y="92" width="48" height="8" rx="4" fill="#f8fafc" fill-opacity="0.45" />
+  </g>
+
+  <!-- Title and Subtitle -->
+  <text x="272" y="118" fill="#f8fafc" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="44" font-weight="800" letter-spacing="-0.5">agy-background-patch</text>
+  <text x="272" y="162" fill="#94a3b8" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="500">Custom Wallpaper, Glassmorphism UI &amp; Automated Slideshow Patcher for Antigravity</text>
+
+  <!-- Feature Pills -->
+  <g transform="translate(272, 194)">
+    <rect x="0" y="0" width="196" height="38" rx="19" fill="#0f172a" stroke="#38bdf8" stroke-opacity="0.45" stroke-width="1.5" />
+    <text x="98" y="24" text-anchor="middle" fill="#38bdf8" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="600">Live Hot-Reload</text>
+
+    <rect x="212" y="0" width="220" height="38" rx="19" fill="#0f172a" stroke="#818cf8" stroke-opacity="0.45" stroke-width="1.5" />
+    <text x="322" y="24" text-anchor="middle" fill="#a5b4fc" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="600">Multi-Image Slideshow</text>
+
+    <rect x="448" y="0" width="210" height="38" rx="19" fill="#0f172a" stroke="#34d399" stroke-opacity="0.45" stroke-width="1.5" />
+    <text x="553" y="24" text-anchor="middle" fill="#6ee7b7" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="600">SHA-256 ASAR Sync</text>
+
+    <rect x="674" y="0" width="200" height="38" rx="19" fill="#0f172a" stroke="#f472b6" stroke-opacity="0.45" stroke-width="1.5" />
+    <text x="774" y="24" text-anchor="middle" fill="#f9a8d4" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="600">Zero Dependencies</text>
+  </g>
+</svg>

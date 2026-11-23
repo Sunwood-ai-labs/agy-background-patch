@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile and verify patch_background.py syntax
+        run: |
+          python -m py_compile patch_background.py
+          python patch_background.py --help
+
+      - name: Run unit test on synthetic ASAR archive
+        run: |
+          python - << 'EOF'
+          import json, struct, tempfile
+          from pathlib import Path
+          import patch_background as pb
+
+          with tempfile.TemporaryDirectory() as tmp:
+              asar_file = Path(tmp) / "app.asar"
+              dummy_utils = f'"use strict";\n{pb.TARGET_ANCHOR}\nconsole.log("ok");\n'.encode("utf-8")
+              header = {
+                  "files": {
+                      "dist": {
+                          "files": {
+                              "utils.js": {
+                                  "size": len(dummy_utils),
+                                  "offset": "0",
+                                  "integrity": pb.compute_integrity(dummy_utils),
+                              }
+                          }
+                      }
+                  }
+              }
+              asar_bytes = pb.build_asar(header, {"dist/utils.js": dummy_utils})
+              asar_file.write_bytes(asar_bytes)
+
+              class Args:
+                  asar = str(asar_file)
+                  in_place_unpatch = False
+
+              pb.cmd_install(Args())
+              raw, h2, base = pb.read_asar(asar_file)
+              files = pb.extract_all_files(raw, h2, base)
+              assert pb.PATCH_MARKER_START.encode("utf-8") in files["dist/utils.js"]
+
+              pb.cmd_uninstall(Args())
+              raw3, h3, base3 = pb.read_asar(asar_file)
+              files3 = pb.extract_all_files(raw3, h3, base3)
+              assert pb.PATCH_MARKER_START.encode("utf-8") not in files3["dist/utils.js"]
+              print("ASAR install/uninstall round-trip verified successfully!")
+          EOF

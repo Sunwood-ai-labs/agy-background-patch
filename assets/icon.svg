@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+  <!-- Outer container -->
+  <rect x="8" y="8" width="112" height="112" rx="26" fill="url(#bgGrad)" stroke="url(#accentGrad)" stroke-width="3" />
+  <!-- Wallpaper mountain / skyline layer -->
+  <path d="M 20 88 L 44 58 L 64 78 L 86 48 L 108 88 Z" fill="url(#accentGrad)" opacity="0.85" />
+  <circle cx="42" cy="40" r="8" fill="#38bdf8" opacity="0.9" />
+  <!-- Translucent glass UI card layer -->
+  <rect x="28" y="32" width="72" height="64" rx="12" fill="url(#glassGrad)" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2" />
+  <!-- UI header dots inside glass layer -->
+  <circle cx="40" cy="44" r="3" fill="#38bdf8" />
+  <circle cx="50" cy="44" r="3" fill="#818cf8" />
+  <rect x="38" y="56" width="52" height="6" rx="3" fill="#f8fafc" fill-opacity="0.75" />
+  <rect x="38" y="68" width="36" height="6" rx="3" fill="#f8fafc" fill-opacity="0.45" />
+</svg>

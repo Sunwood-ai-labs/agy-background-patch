@@ -1,0 +1,15 @@
+[project]
+name = "agy-background-patch"
+version = "1.0.0"
+description = "Custom Wallpaper, Glassmorphism UI & Automated Slideshow Patcher for Google Antigravity"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Sunwood AI Labs", email = "sunwood.ai.labs@gmail.com" }
+]
+keywords = ["antigravity", "wallpaper", "slideshow", "electron", "asar", "theme", "glassmorphism"]
+dependencies = []
+
+[project.scripts]
+agy-bg-patch = "patch_background:main"
